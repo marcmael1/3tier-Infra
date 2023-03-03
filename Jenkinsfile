@@ -24,7 +24,9 @@ pipeline {
         stage('Action') {
             steps {
                 echo "terraform action from the parameter is -->${action}"
-                sh('terraform ${action} --var-file=./config/dev.tfvars --auto-approve')
+                sh """
+                terraform ${action} --var-file=./config/dev.tfvars -var 'region=${params.region}' --auto-approve
+                """
             }
         }
     }
