@@ -7,6 +7,26 @@ tags = {
     Project_name = "RP"
 }
 
+vpc_config = {
+
+    vpc0 = {
+        vpc_cidr = "10.0.0.0/16"
+        tags = {
+         Name = "main0"
+         Environment = "Dev"
+        } 
+    }
+
+    vpc1 = {
+        vpc_cidr = "10.0.0.0/16"
+        tags = {
+         Name = "main1"
+         Environment = "Dev"
+        } 
+    }
+    
+}
+
 
 
 
