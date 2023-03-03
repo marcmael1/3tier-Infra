@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'region', defaultValue: 'us-east-1', description: 'choose aws region to deploy')
+    }
 
     stages {
         stage('Init') {
@@ -10,9 +13,11 @@ pipeline {
 
          stage('Validate, Fmt & Plan') {
             steps {
-               sh ('terraform validate')
-               sh ('terraform fmt')
-               sh ('terraform plan --var-file=./config/dev.tfvars')
+               sh """
+                terraform validate
+                terraform fmt
+                terraform plan --var-file=./config/dev.tfvars -var 'region=${params.region}'
+               """
             }
         }
         
