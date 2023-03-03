@@ -12,7 +12,7 @@ vpc_config = {
     vpc0 = {
         vpc_cidr = "10.0.0.0/16"
         tags = {
-         Name = "main0"
+         Name = "VPC0"
          Environment = "Dev"
         } 
     }
@@ -20,7 +20,7 @@ vpc_config = {
     vpc1 = {
         vpc_cidr = "10.0.0.0/16"
         tags = {
-         Name = "main1"
+         Name = "VPC1"
          Environment = "Dev"
         } 
     }
