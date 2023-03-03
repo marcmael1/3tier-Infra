@@ -12,7 +12,7 @@ pipeline {
             steps {
                sh ('terraform validate')
                sh ('terraform fmt')
-               sh ('terraform plan')
+               sh ('terraform plan --var-file=./config/dev.tfvars')
             }
         }
         
